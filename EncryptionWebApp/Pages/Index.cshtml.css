@@ -1,0 +1,29 @@
+﻿p,
+label {
+    font-family: "Cascadia Mono", monospace;
+}
+
+section,
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+section p {
+    margin-top: 2rem;
+}
+
+.form-choices {
+    margin: 1rem 0rem 1rem 0rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-choices label {
+    margin-right: 1rem;
+}
+
+.encrypt-or-decrypt {
+    flex-direction: row;
+    margin-right: 2rem;
+}

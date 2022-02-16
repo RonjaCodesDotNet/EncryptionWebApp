@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Startsida";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Välkommen!</h1>
+</div>
+
+<section>
+    <form method="post">
+        <div class="form-choices">
+            <div class="encrypt-or-decrypt">
+                <input type="radio" id ="encrypt" name="encryptOrDecrypt" value="encrypt" asp-for="EncryptOrDecrypt" required />
+                <label for="encrypt">Kryptera</label>
+            </div>
+
+            <div class="encrypt-or-decrypt">
+                <input type="radio" id ="decrypt" name="encryptOrDecrypt" value="decrypt" asp-for="EncryptOrDecrypt" />
+                <label for="decrypt">Avkryptera</label>
+            </div>
+        </div>
+
+        <div class="form-choices">
+            <label for="encryptionMethod">Krypteringsmetod:</label>
+            <select id="encryptionMethod" asp-for="MethodChoice" required>
+                <option value="">Välj ett alternativ</option>
+                <option value="caesarCipher">Caesarchiffer</option>
+            </select>
+        </div>
+
+        <div class="form-choices">
+            <label for="userInput">Din text:</label>
+            <textarea id="userInput" maxLength="150" placeholder="Max 150 tecken" asp-for="TextInput" required></textarea>
+        </div>
+
+        <button type="submit">Skicka</button>
+    </form>
+
+    <p>Resultat: @Model.TextOutput</p>
+</section>
